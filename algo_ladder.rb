@@ -233,3 +233,46 @@
 
 # pp hashify(arr1, num1)
 
+##################################################################
+##################################################################
+
+# # Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+# # input = ["a", "b", "c", "d"]
+# # Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+# # input = ["a", "a", "c"] #=> ["aa", "ac", "aa", "ac", "ca", "ca"]
+# # input = [1, "v", "c"] #=> ["1v", "1c", "v1", "vc", "c1", "cv"] (in this case you would have to do a .to_s)
+
+# # write a fn that takes in 1 arr
+# # create var called new_arr = []
+# # set a var that tracks the current item that you're at. called anchor
+# # set another var called next_index.
+# # there will need to be 2 loops. in the inner loop, next_index gets incremented. in the outer loop, anchor gets incremented.
+
+# # once anchor == arr.length - 1 && next_index == arr.length - 2, then stop the loop.
+# # inside the loop, you need to compare to make sure that you don't create a string combo whenever anchor == next_index. anytime other than that, create a new string combo and put it in new_arr.
+
+# input = ["a", "b", "c", "d"]
+# # Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+# def string_combos(arr)
+#   new_arr = []
+#   i = 0
+#   while i < arr.length
+#     next_i = 0
+#     while next_i < arr.length
+#       if i != next_i
+#         new_arr << arr[i] + arr[next_i]
+#       end
+#       next_i += 1
+#     end
+#     i += 1
+#   end
+#   return new_arr
+# end
+
+# pp string_combos(input)
+
+
+
