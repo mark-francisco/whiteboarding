@@ -186,3 +186,50 @@
 # pp leap_year?(2000) #=> true
 # pp leap_year?(2100) #=> false
 # pp leap_year?(-400) #=> true
+
+##################################################################
+##################################################################
+
+# 7:40
+
+# You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
+
+# Input: 
+# First argument: ["a", "e", "i", "o", "u"]
+# Second argument: 1
+
+# Output: 
+# {
+#       'a' => 1,
+#       'e' => 1,
+#       'i' => 1,
+#       'o' => 1,
+#       'u' => 1
+# }
+
+# ["z","y","x"], 5
+# { "z" => 5, "y" => 5, "x" => 5 }
+
+# [1,2,3], 1
+# { 1 => 1, 2 => 1, 3 => 1 }
+
+# write a fn that takes 2 arg's: arr, num
+# this fn will loop thru every item in the "arr" argument
+# we will create a hash. then in each round of the loop, we will set a new hash item's key and value as follows: key = current arr item. value = "num" argument.
+# return hash at the end.
+
+# # arr1 = ["z","y","x"]
+# # num1 = 12
+# arr1 = ["a","s","d", "f"]
+# num1 = 2
+
+# def hashify(arr, num)
+#   result_hash = {}
+#   arr.each{ |arr_item|
+#     result_hash[arr_item] = num
+#   }
+#   return result_hash
+# end
+
+# pp hashify(arr1, num1)
+
