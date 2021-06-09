@@ -194,11 +194,11 @@
 
 # You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
 
-# Input: 
+# Input:
 # First argument: ["a", "e", "i", "o", "u"]
 # Second argument: 1
 
-# Output: 
+# Output:
 # {
 #       'a' => 1,
 #       'e' => 1,
@@ -274,5 +274,26 @@
 
 # pp string_combos(input)
 
+##################################################################
+##################################################################
+# # Write a function that gives the Nth number of the Fibonacci Sequence. The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers. So the sequence goes like this:
 
+# # 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on until infinity...
 
+# # Input: 9
+# # Output: 21 (as this is the 9th number of the Fibonacci Sequence)
+
+# def fibonacci(n)
+#   fibonacci = [0, 1]
+#   i = 0
+#   while fibonacci.length < n
+#     fibonacci << fibonacci[i] + fibonacci[i + 1]
+#     i += 1
+#   end
+#   return fibonacci[-1]
+# end
+
+# pp fibonacci(9)
+# pp fibonacci(10)
+# pp fibonacci(11)
+# pp fibonacci(5)
