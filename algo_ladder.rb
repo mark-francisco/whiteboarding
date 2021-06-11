@@ -297,3 +297,54 @@
 # pp fibonacci(10)
 # pp fibonacci(11)
 # pp fibonacci(5)
+
+##################################################################
+##################################################################
+
+# You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
+
+# take the hash's values & split them out into separate hash items. each value in the previous arr becomes its own key.
+# and the old key becomes the new value.
+# sort by key a-z at the end.
+
+def transform_hash(hash)
+  new_hash = {}
+  hash.each { |key, value|
+    i = 0
+    while i < value.length
+      new_hash[value[i]] = key
+      i += 1
+    end
+  }
+  return new_hash
+  # next step is to sort and lowercase the stuff
+
+  # look at each hash item individually: 1 loop to loop thru the hash items.
+  # each individual hash item's value is an arr. that arr can have 1 or multiple "arr items".
+  # 2nd inner loop to loop thru the arr items.
+  # every time in the loop, create a new hash where the current "arr item" is the key and the current hash_item is the value.
+
+  # after both loops are done, sort new_hash a-z
+end
+
+hash1 = {
+  1 => ["A", "E"],
+  2 => ["D", "G"],
+}
+
+pp transform_hash(hash1)
+# think about re-factoring later if there's time
+
+# given:
+# hash1 = {
+#   1 => ["A", "E"],
+#   2 => ["D", "G"],
+# }
+
+# output:
+# {
+#   'a' => 1,
+#   'd' => 2,
+#   'e' => 1,
+#   'g' => 2
+# }
