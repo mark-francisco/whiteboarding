@@ -426,3 +426,37 @@
 # pp rna_transcription(a) # Output: 'UGCACCAGAAUU'
 # pp rna_transcription(b) # output: 'CUAGUG'
 # pp rna_transcription(c) # output: 'UGAC'
+
+##################################################################
+##################################################################
+
+# # Write a function that returns whether a given number is a prime number.
+
+# # 7 => true
+# # 3 => true
+# # 13 => true
+# # 9 => false
+
+# # write a method that takes 1 argument (num)
+# # i = 2. do a loop. start at 2. end at num.
+# # return false if num is divisible by i.
+# # otherwise, after the loop, return true.
+# def prime?(num)
+#   i = 2
+#   while i < num
+#     if num % i == 0
+#       return false
+#     end
+#     i += 1
+#   end
+#   return true
+# end
+
+# # edge cases: negative numbers should always return false. 1 should return false.
+# # edge cases: run the loop only while i <= sqrt(num). because the highest number pair thing that num can be divisible by is sqrt(num). bc if you had any number higher than that, you would be checking the converse of a divisible pair that you already passed.
+
+# # pp prime?(7)
+# # pp prime?(3)
+# # pp prime?(13)
+# # pp prime?(9)
+# # pp prime?(12)
