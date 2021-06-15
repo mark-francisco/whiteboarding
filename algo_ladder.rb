@@ -301,50 +301,128 @@
 ##################################################################
 ##################################################################
 
-# You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
+# # You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
 
-# take the hash's values & split them out into separate hash items. each value in the previous arr becomes its own key.
-# and the old key becomes the new value.
-# sort by key a-z at the end.
+# # take the hash's values & split them out into separate hash items. each value in the previous arr becomes its own key.
+# # and the old key becomes the new value.
+# # sort by key a-z at the end.
 
-def transform_hash(hash)
-  new_hash = {}
-  hash.each { |key, value|
-    i = 0
-    while i < value.length
-      new_hash[value[i]] = key
-      i += 1
-    end
-  }
-  return new_hash
-  # next step is to sort and lowercase the stuff
+# def transform_hash(hash)
+#   new_hash = {}
+#   hash.each { |key, value|
+#     i = 0
+#     while i < value.length
+#       new_hash[value[i]] = key
+#       i += 1
+#     end
+#   }
+#   return new_hash
+#   # next step is to sort and lowercase the stuff
 
-  # look at each hash item individually: 1 loop to loop thru the hash items.
-  # each individual hash item's value is an arr. that arr can have 1 or multiple "arr items".
-  # 2nd inner loop to loop thru the arr items.
-  # every time in the loop, create a new hash where the current "arr item" is the key and the current hash_item is the value.
+#   # look at each hash item individually: 1 loop to loop thru the hash items.
+#   # each individual hash item's value is an arr. that arr can have 1 or multiple "arr items".
+#   # 2nd inner loop to loop thru the arr items.
+#   # every time in the loop, create a new hash where the current "arr item" is the key and the current hash_item is the value.
 
-  # after both loops are done, sort new_hash a-z
-end
+#   # after both loops are done, sort new_hash a-z
+# end
 
-hash1 = {
-  1 => ["A", "E"],
-  2 => ["D", "G"],
-}
-
-pp transform_hash(hash1)
-# think about re-factoring later if there's time
-
-# given:
 # hash1 = {
 #   1 => ["A", "E"],
 #   2 => ["D", "G"],
 # }
 
-# output:
-# {
-#   'a' => 1,
-#   'd' => 2,
-#   'e' => 1,
-#   'g' => 2
-# }
+# pp transform_hash(hash1)
+# # think about re-factoring later if there's time
+
+# # given:
+# # hash1 = {
+# #   1 => ["A", "E"],
+# #   2 => ["D", "G"],
+# # }
+
+# # output:
+# # {
+# #   'a' => 1,
+# #   'd' => 2,
+# #   'e' => 1,
+# #   'g' => 2
+# # }
+
+##################################################################
+##################################################################
+
+# 7:40
+# Given a DNA strand, return its RNA complement (per RNA transcription).
+# Both DNA and RNA strands are a sequence of nucleotides. Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
+
+# Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+
+# G becomes C
+# C becomes G
+# T becomes A
+# A becomes U
+
+# So based on all this, here's a sample input/output:
+
+# Input:    'ACGTGGTCTTAA'
+# Output: 'UGCACCAGAAUU'
+
+# input: 'GATCAC'
+# output: 'CUAGUG'
+
+# input: 'ACTG'
+# output: 'UGAC'
+
+# write a method that accepts 1 argument (str)
+# look at each letter in str and make the appropriate translation
+# return new RNA-ified string
+# re-factor: see if you can do this "in place" without creating any new data
+
+# def rna_transcription(str)
+#   rna = ""
+#   str.each_char { |letter|
+#     if letter.downcase == "g"
+#       rna += "C"
+#     elsif letter.downcase == "c"
+#       rna += "G"
+#     elsif letter.downcase == "t"
+#       rna += "A"
+#     elsif letter.downcase == "a"
+#       rna += "U"
+#     end
+#   }
+#   return rna
+# end
+
+# a = "ACGTGGTCTTAA"
+# b = "GATCAC"
+# c = "ACTG"
+
+# pp rna_transcription(a) # Output: 'UGCACCAGAAUU'
+# pp rna_transcription(b) # output: 'CUAGUG'
+# pp rna_transcription(c) # output: 'UGAC'
+
+# def rna_transcription(str)
+#   str.each_char.with_index { |letter, i|
+#     pp i
+#     if letter.downcase == "g"
+#       str[i] = "C"
+#     elsif letter.downcase == "c"
+#       str[i] = "G"
+#     elsif letter.downcase == "t"
+#       str[i] = "A"
+#     elsif letter.downcase == "a"
+#       str[i] = "U"
+#     end
+#   }
+#   return str
+# end
+
+# a = "ACGTGGTCTTAA"
+# b = "GATCAC"
+# c = "ACTG"
+
+# pp rna_transcription(a) # Output: 'UGCACCAGAAUU'
+# pp rna_transcription(b) # output: 'CUAGUG'
+# pp rna_transcription(c) # output: 'UGAC'
