@@ -461,6 +461,9 @@
 # # pp prime?(9)
 # # pp prime?(12)
 
+####################################################
+####################################################
+
 # Chapter 8 Exercises:
 #
 # def intersection(arr1, arr2)
@@ -553,5 +556,19 @@
 ################################################
 ################################################
 
-def first_non_duplicate
-end
+# def first_non_duplicate(str)
+#   lookup_hash = {}
+#   str.each_char { |letter|
+#     if lookup_hash[letter]
+#       lookup_hash[letter] += 1
+#     else
+#       lookup_hash[letter] = 1
+#     end
+#   }
+#   return lookup_hash.find { |key, _value|
+#            lookup_hash[key] == 1
+#          }[0]
+# end
+
+# pp first_non_duplicate("minimum")
+# pp first_non_duplicate("vvllaatse")
