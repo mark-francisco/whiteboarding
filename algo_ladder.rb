@@ -460,3 +460,98 @@
 # # pp prime?(13)
 # # pp prime?(9)
 # # pp prime?(12)
+
+# Chapter 8 Exercises:
+#
+# def intersection(arr1, arr2)
+#   if arr1.length > arr2.length
+#     larger_arr = arr1
+#     smaller_arr = arr2
+#   else
+#     larger_arr = arr2
+#     smaller_arr = arr1
+#   end
+
+#   lookup_hash = {}
+
+#   larger_arr.each do |arr_item|
+#     lookup_hash[arr_item] = true
+#   end
+
+#   result = []
+
+#   smaller_arr.each do |arr_item|
+#     if lookup_hash[arr_item]
+#       result << arr_item
+#     end
+#   end
+#   return result
+# end
+
+# pp intersection([1, 2, 3, 4, 5], [0, 2, 4, 6, 8])
+# pp intersection([1, 2, 3, 9, 6, 5], [2, 6, 6, 9, 8])
+
+################################################
+################################################
+
+# def first_duplicate(arr)
+#   lookup_hash = {}
+#   arr.each { |arr_item|
+#     if lookup_hash[arr_item]
+#       return arr_item
+#     end
+#     lookup_hash[arr_item] = true
+#   }
+# end
+
+# pp first_duplicate(["a", "b", "c", "d", "c", "e", "f"])
+# pp first_duplicate(["a", "b", "c", "b", "d", "d", "c", "e", "f"])
+
+################################################
+################################################
+
+# def missing_letter(str)
+#   alphabet = {
+#     "a" => true,
+#     "b" => true,
+#     "c" => true,
+#     "d" => true,
+#     "e" => true,
+#     "f" => true,
+#     "g" => true,
+#     "h" => true,
+#     "i" => true,
+#     "j" => true,
+#     "k" => true,
+#     "l" => true,
+#     "m" => true,
+#     "n" => true,
+#     "o" => true,
+#     "p" => true,
+#     "q" => true,
+#     "r" => true,
+#     "s" => true,
+#     "t" => true,
+#     "u" => true,
+#     "v" => true,
+#     "w" => true,
+#     "x" => true,
+#     "y" => true,
+#     "z" => true,
+#   }
+
+#   str.each_char { |letter|
+#     if alphabet[letter]
+#       alphabet.delete(letter)
+#     end
+#   }
+#   return alphabet.keys[0]
+# end
+
+# pp missing_letter("the quick brown box jumps over a lazy dog")
+
+################################################
+################################################
+
+def first_non_duplicate
+end
