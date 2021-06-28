@@ -572,3 +572,91 @@
 
 # pp first_non_duplicate("minimum")
 # pp first_non_duplicate("vvllaatse")
+
+##################################################################
+##################################################################
+
+# # Given two strings, return true if they are anagrams of each other, and false if they are not.
+# # An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+# # Do not use any built-in sort methods.
+
+# # Input: “silent”, “listen”
+# # Output: true
+
+# # Input: “frog”, “bear”
+# # Output: false
+
+# # input: "asdf", "ddddddddas"
+# # output: true
+
+# # function that returns true or false.
+# # it counts as long as you can make the word with the given letters. you can double up letters.
+# # solve with a hash.
+# # no .include. no .find. no .sort.
+
+# def anagram?(str1, str2)
+#   test_hash = {}
+#   str1.each_char { |char|
+#     if !test_hash[char]
+#       test_hash[char] = 1
+#     elsif test_hash[char]
+#       test_hash[char] += 1
+#     end
+#   }
+#   str2.each_char { |char|
+#     if !test_hash[char]
+#       return false
+#     end
+#   }
+#   puts test_hash
+#   if you didn't find any non-matches, so return true
+#   return true
+# end
+
+# pp anagram?("silent", "listen")
+# pp anagram?("frog", "bear") #false
+# pp anagram?("ddddddddas", "asdf") #true
+
+##################################################################
+##################################################################
+# # Given an array of social media posts and a hash of users, return a list of posts (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
+# # For example, given this array of posts (note that the submitted_by is an id number):
+
+# # [
+# # {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+# # {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+# # {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+# # {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+# # ]
+
+# # And this hash of users (the key is the id number and the value is the user's real name):
+# users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
+
+# # Return the array of posts as follows:
+# # [
+# # {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+# # {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+# # {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+# # {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+# # ]
+
+# # we have an arr "posts"
+# # we have a hash "users"
+# # return an arr of hashes of all posts
+# # update the original hash
+
+# # takes in arr of posts and hash of users
+# def update_hash(posts)
+#   users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
+#   posts.each do |post|
+#     post[:submitted_by] = users[post[:submitted_by]]
+#   end
+# end
+
+# posts1 = [
+#   { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },
+#   { title: "i never knew how cool i was until now", submitted_by: 989, likes: 3 },
+#   { title: "best selfie evar!!!", submitted_by: 111, likes: 1092 },
+#   { title: "Mondays are the worst", submitted_by: 403, likes: 644 },
+# ]
+# pp update_hash(posts1)
